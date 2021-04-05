@@ -1,0 +1,24 @@
+/* Dándo estilo al cuerpo */
+
+body {
+    background-color: lightblue;
+    color: black;
+}
+
+/* Estilo encabezado H1*/
+
+h1 {
+    background-color: yellow;
+    color: green;
+}
+
+p {
+    background-color: orange;
+}
+
+/* Estilo solo para el párrafo especial*/
+
+#especial {
+    background-color: green;
+    color: white;
+}
