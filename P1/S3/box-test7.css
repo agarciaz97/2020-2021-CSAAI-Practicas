@@ -3,7 +3,7 @@
 body {
     padding: 5px; /* relleno */
     margin: 10px; /* margen */
-    border: solid; 
+    /*! border: solid; */ 
     border-color:red;
 }
 
@@ -13,5 +13,5 @@ p {
     padding: 10px; 
     margin: 10px;
     border: solid;
-    border-color: blue;
+    border-color: green;
 }
