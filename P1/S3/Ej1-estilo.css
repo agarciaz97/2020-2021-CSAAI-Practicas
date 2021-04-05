@@ -1,0 +1,19 @@
+/* Ejemplo de hoja de estilo */
+
+/* Dándole estilo al cuerpo */
+body {
+    background-color: lightblue;
+}
+
+/* Dándole estilo al encabezado*/
+
+h1 {
+    color: black;
+}
+
+/* Dándole estilo al párrafo */
+
+p {
+    color: blue;
+}
+
