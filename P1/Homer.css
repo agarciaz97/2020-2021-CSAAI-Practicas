@@ -1,5 +1,10 @@
 
-.titulo {
-    font-family: "Simpsonfont";
+@font-face {
+    font-family: 'Simpsonfont';
     src: url('Simpsonfont.otf');
 }
+
+h1 {
+    font-family: "Simpsonfont";
+}
+
