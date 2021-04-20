@@ -33,6 +33,7 @@ h1 {
 }
 
 div {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: white;
     border: 1px solid;
     border-color: black;
@@ -42,6 +43,7 @@ div {
 }
 
 fieldset {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
     margin-bottom: 10px;
 }
