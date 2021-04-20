@@ -1,9 +1,15 @@
-
+/* Utilizo @font-face para poder usar
+una topografía de internet, o en este caso, 
+de un archivo descargado en mi ordenador */
 @font-face {
     font-family: 'Simpsonfont';
     src: url('Simpsonfont.otf');
 }
 
+/* Estilo encabezado pricipal*/
+/* Mediante el parámetro font-family 
+especifico el nombre de la topografía 
+que quiero usar */
 h1 {
     font-family: "Simpsonfont";
     text-align: center;
@@ -11,14 +17,21 @@ h1 {
     
 }
 
+/* Estilo del primer contenedor de elementos, 
+que voy a usar como encabezado del curriculum*/
 #Nubes {
     background-image: url('Fondo.jpg');
     margin: auto;
     margin-top: 10px;
     padding: 10px;
     height: 200px;
-    width: 602px;
+    width: 600px;
 }
+
+/* Quiero que la imagen esté centrada, 
+como no es un texto, la manera de hacerlo 
+es tratandola como un elemento tipo bloque 
+y asignarle un margen auto*/
 
 #img1 {
     height: 100px;
@@ -27,10 +40,13 @@ h1 {
     margin: auto;
 }
 
+/* Estilo del cuerpo*/
 #fondo{
     background-image: url('rosquillas.jpg');
 }
 
+/* Estilo del segundo contenedor, donde 
+he metido todos los campos del curriculum */
 div {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: white;
@@ -42,7 +58,12 @@ div {
     width: 40%;
 }
 
+/* Estilo fieldset */
+/* Para que sea simétrico tengo 
+que aplicar un margen solo a la parte de abajo de los fieldset */
+/* El estilo quiero que sea igual que el del div */ 
 fieldset {
     margin-bottom: 10px;
 }
+
 
