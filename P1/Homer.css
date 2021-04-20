@@ -6,5 +6,30 @@
 
 h1 {
     font-family: "Simpsonfont";
+    text-align: center;
+    color: yellow;
+    
 }
 
+#Nubes {
+    background-image: url('Fondo.jpg');
+    padding: 10px;
+    height: 200px;
+    width: 600px;
+}
+
+#img1 {
+    height: 100px;
+    width: 200px;
+    display: block;
+    margin: auto;
+}
+
+#fondo{
+    background-color: lightblue;
+    padding: 0%;
+}
+
+h2 {
+    color: black;
+}
