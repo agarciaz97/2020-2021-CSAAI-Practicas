@@ -13,9 +13,11 @@ h1 {
 
 #Nubes {
     background-image: url('Fondo.jpg');
+    margin: auto;
+    margin-top: 15px;
     padding: 10px;
     height: 200px;
-    width: 600px;
+    width: 602px;
 }
 
 #img1 {
@@ -26,10 +28,21 @@ h1 {
 }
 
 #fondo{
-    background-color: lightblue;
+    background-image: url('rosquillas.jpg');
     padding: 0%;
 }
 
-h2 {
-    color: black;
+div {
+    background-color: white;
+    border: 1px solid;
+    border-color: black;
+    margin: auto;
+    padding: 10px;
+    width: 60%;
 }
+
+fieldset {
+    color: black;
+    margin-bottom: 10px;
+}
+
