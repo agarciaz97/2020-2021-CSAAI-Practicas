@@ -66,13 +66,19 @@ fieldset {
     margin-bottom: 10px;
 }
 
+/* Tamaño de las imágenes de los 
+trabajos anteriores(menos importantes)*/ 
 .img2 {
     height: 80px;
     width: 160px;
+    margin-right: 10px;
 }
 
+/*Tamaño imagen trabajo actual(más importante)*/
 .img3 {
     height: 100px;
     width: 200px;
 }
+
+
 
