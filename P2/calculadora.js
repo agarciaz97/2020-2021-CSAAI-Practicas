@@ -1,6 +1,7 @@
 console.log("Ejecutando JS...");
 
 display = document.getElementById("display")
+punto = document.getElementById("punto")
 igual = document.getElementById("igual")
 borrartodo = document.getElementById("borratodo")
 borrar = document.getElementById("borrar")
@@ -37,17 +38,16 @@ function digito(ev)
     }else if (estado == ESTADO.OP2){
 
         display.innerHTML += ev.target.value;
-
     }
 }
 
 function operacion(ev)
 {
-    if(estado ==ESTADO.OP1){
+    if(estado == ESTADO.OP1){
         display.innerHTML += ev.target.value;
         estado = ESTADO.OPERATION;
     }else{
-        console.log("error");
+        console.log("Error, aquí no se puede añadir una operación");
     }
 }
 
@@ -73,6 +73,7 @@ for (let operador of operadores) {
 igual.onclick = () => {
     if(estado == ESTADO.OP2){
         display.innerHTML = eval(display.innerHTML);
+        estado = ESTADO.OP1;
     }else{
         console.log("No valido");
     }
