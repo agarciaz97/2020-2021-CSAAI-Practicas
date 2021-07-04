@@ -1,16 +1,25 @@
 *{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
     color: black;
 }
 
 body{
     margin:0%;
-    background-color: orange
+    background-color: white;
 }
 
-.Calculadora {
+#Calculadora {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; /* altura ventana gráfica*/
+}
+
+
+#Teclado{
+    display:grid;
+    grid-template-columns: repeat(4,70px);
+    grid-template-rows: 100px repeat(4, 50px);
+    background-color: coral;
+
 }
