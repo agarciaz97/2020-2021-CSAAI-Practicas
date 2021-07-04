@@ -5,8 +5,6 @@ igual = document.getElementById("igual")
 borrartodo = document.getElementById("borratodo")
 borrar = document.getElementById("borrar")
 
-
-
 //-- Estados de la calculadora
 const ESTADO = {
     INIT: 0,
@@ -45,9 +43,11 @@ function digito(ev)
 
 function operacion(ev)
 {
-    if(estado !=ESTADO.OPERATION){
+    if(estado ==ESTADO.OP1){
         display.innerHTML += ev.target.value;
-        estado = ESTADO.OPERATION 
+        estado = ESTADO.OPERATION;
+    }else{
+        console.log("error");
     }
 }
 
@@ -60,14 +60,10 @@ operadores = document.getElementsByClassName("operador")
 //-- para todos los botones de tipo dígito
 for (let boton of digitos) {
 
-    //-- Se ejecuta cuando se pulsa un boton
-    //-- que es un dígito. Para que el código sea 
-    //-- mas legible la función de retrollamada se
-    //-- escribe como una función normal (digito)
     boton.onclick = digito;
 }
 
-for(let operador of operadores) {
+for (let operador of operadores) {
 
     operador.onclick = operacion;
 }
@@ -76,11 +72,9 @@ for(let operador of operadores) {
 //-- Evaluar la expresion
 igual.onclick = () => {
     if(estado == ESTADO.OP2){
-    
         display.innerHTML = eval(display.innerHTML);
-        estado = ESTADO.INIT;
     }else{
-        console.log("No valido")
+        console.log("No valido");
     }
 }
 
