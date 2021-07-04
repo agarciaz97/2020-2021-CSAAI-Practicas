@@ -1,6 +1,6 @@
 *{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
-    color: black;
+    color: white;
 }
 
 body{
@@ -8,7 +8,7 @@ body{
     background-color: white;
 }
 
-#Calculadora {
+#Contenido {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,10 +16,36 @@ body{
 }
 
 
-#Teclado{
-    display:grid;
-    grid-template-columns: repeat(4,70px);
-    grid-template-rows: 100px repeat(4, 50px);
+#Calculadora{
+    display: grid;
+    grid-template-columns: repeat(4,50px);
+    grid-template-rows: 100px repeat(5, 50px);
     background-color: coral;
+    padding: 10px;
+    border-radius: 15px;
+}
 
+button{
+    cursor: pointer;
+    color: black;
+    margin: 2px;
+    border-radius: 15px;
+}
+
+button:focus{
+    outline: none;
+}
+
+#Pantalla{
+    display: flex;
+    grid-column: 1 / -1;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 15px;
+    align-items: flex-end;
+    background-color: black;
+}
+
+#borratodo{
+    grid-column: span 2;
 }
