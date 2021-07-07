@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'StarWarsfont';
-  src: url('Starjout.ttf');
+  src: url('Starjout.ttf'); 
 }
 
 h1 {
@@ -10,20 +10,14 @@ h1 {
 }
 
 body {
-  background-image: url(fondo.jpeg);
-  background-size: cover;
+ background-image: url(fondo.jpeg);
+ background-size: cover;
 }
 .contenidoprincipal{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-img{
-  height: 300px;
-  width: 400px;
-}
-
 .imagenori{
   width: 50%;
   font-family: 'StarWarsfont';
@@ -34,12 +28,11 @@ img{
 
 .imagenmani{
   width: 50%;
-  font-family: 'StarWarsfont';
+  font-family: 'Starwarsfont';
   font-size: 20px;
   text-align: center;
   color: yellow;
 }
-
 .botones{
   display: flex;
   justify-content: center;

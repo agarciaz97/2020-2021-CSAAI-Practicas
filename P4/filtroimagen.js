@@ -1,6 +1,6 @@
 //-- Obtener elementos del DOM
 const canvas = document.getElementById('canvas');
-const img = document.getElementById('starwars');
+const img = document.getElementById('imagesrc');
 const ctx = canvas.getContext('2d');
 
 //-- Deslizadores
@@ -14,9 +14,9 @@ const valordesliV = document.getElementById('range_value2');
 const valordesliA = document.getElementById('range_value3');
 
 // Botones filtros
-const gris = document.getElementById("gris");
-const color = document.getElementById("color");
-const negativo = document.getElementById("negativo");
+const gris = document.getElementById('gris');
+const color = document.getElementById('color');
+const negativo = document.getElementById('negativo');
 
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que
@@ -37,7 +37,7 @@ img.onload = function () {
 
  
 //-- Funcion de retrollamada del deslizador
-deslizadorR.oninput = () => {
+deslizadorR.oninput =()=>{
   //-- Mostrar el nuevo valor del deslizador
   valordesliR.innerHTML = deslizadorR.value;
   
@@ -65,7 +65,7 @@ deslizadorR.oninput = () => {
 }
 
 //-- Funcion de retrollamada del deslizador
-deslizadorV.oninput = () => {
+deslizadorV.oninput =()=>{
 
   //-- Mostrar el nuevo valor del deslizador
   valordesliV.innerHTML = deslizadorV.value;
@@ -94,7 +94,7 @@ deslizadorV.oninput = () => {
 }
 
 //-- Funcion de retrollamada del deslizador
-deslizadorA.oninput = () => {
+deslizadorA.oninput =()=>{
 
   //-- Mostrar el nuevo valor del deslizador
   valordesliA.innerHTML = deslizadorA.value;
@@ -123,7 +123,7 @@ deslizadorA.oninput = () => {
 }
 
 //-- FILTRO ESCALA DE GRISES
-gris.onclick = () => {
+gris.onclick =()=>{
 
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
@@ -136,7 +136,6 @@ gris.onclick = () => {
 
   //-- Filtrar la imagen según el nuevo umbral
   for (let i = 0; i < data.length; i += 4) {
-    var escalagris = 0.33 * data[i] + 0.5 * data [i +1] + 0.15 * data [i + 2];
     var rojo = data[i];
     var verde = data[i+1];
     var azul = data[i+2];
