@@ -1,0 +1,76 @@
+@font-face {
+  font-family: 'StarWarsfont';
+  src: url('Starjout.ttf');
+}
+
+h1 {
+  font-family: 'StarWarsfont';
+  text-align: center;
+  color: yellow;
+}
+
+body {
+  background-image: url(fondo.jpeg);
+  background-size: cover;
+}
+.contenidoprincipal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img{
+  height: 300px;
+  width: 400px;
+}
+
+.imagenori{
+  width: 50%;
+  font-family: 'StarWarsfont';
+  font-size: 20px;
+  text-align: center;
+  color: yellow;
+}
+
+.imagenmani{
+  width: 50%;
+  font-family: 'StarWarsfont';
+  font-size: 20px;
+  text-align: center;
+  color: yellow;
+}
+
+.botones{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font-family: fantasy;
+    font-weight: 500;
+    font-size: 15px;
+    color: silver;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:10px;
+    padding-right:10px;
+    background-color:teal;
+    border-radius:15px;
+}
+
+#gris, #color{
+  margin-right: 20px;
+}
+
+.deslizadores{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: fantasy;
+  color:silver;
+}
+
+#range_value1, #range_value2{
+  margin-right: 20px;
+}

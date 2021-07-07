@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="filtroimagen.css">
+    <script src="filtroimagen.js" defer></script>
+    <title>Procesado de imágenes</title>
+</head>
+<body>
+    <h1>Procesado de imágenes intergaláctico</h1>
+    <div class="contenidoprincipal">   
+        <div class= "imagenori">
+            <p>imagen original</p>
+            <img src="starwars.jpg" id="starwars">
+        </div>
+        
+        <div class= "imagenmani">
+            <p>imagen manipulada</p>
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="botones">
+        <button id="gris">Escala de grises</button>
+        <button id="color">Umbral de color</button>
+        <button id="negativo">Imagen en negativo</button>
+    </div>
+    <br>
+    <br>
+    <div class="deslizadores">
+            <p>Lado oscuro(Rojo)</p> 
+            <input type="range" id="deslizador1" min="0" max="255" value="255"/>
+            <p id="range_value1">255</p>
+            <p>Lado luminoso(Verde)</p> 
+            <input type="range" id="deslizador2" min="0" max="255" value="255"/>
+            <p id="range_value2">255</p>
+            <p>Lado luminoso(Azul)</p> 
+            <input type="range" id="deslizador3" min="0" max="255" value="255"/>
+            <p id="range_value3">255</p>
+    </div> 
+</body>
+</html>
