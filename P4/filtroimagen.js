@@ -123,7 +123,7 @@ deslizadorA.oninput =()=>{
 
 //-- Al pulsar el botón 'gris' se aplica el filtrado 
 //-- en escala de grises
-gris.onclick =()=>{
+gris.onclick = () => {
 
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
@@ -145,6 +145,10 @@ gris.onclick =()=>{
 
   //-- Poner la imagen modificada en el canvas
   ctx.putImageData(imgData, 0, 0);
+}
+
+color.onclick = () => {
+  ctx.drawImage(img, 0,0);
 }
 
 //-- Al pulsar el botón 'negativo' se aplica
