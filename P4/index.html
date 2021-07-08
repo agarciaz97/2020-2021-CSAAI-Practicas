@@ -10,12 +10,14 @@
 </head>
 <body>
     <h1>Procesado de imágenes intergaláctico</h1>
+    
     <div class="contenidoprincipal">   
+        <!-- contenedor para la imagen original-->
         <div class= "imagenori">
             <p>imagen original</p>
             <img src="starwars.jpg" id="imagesrc">
         </div>
-        
+        <!-- contenedor imagen modificada en canvas-->
         <div class= "imagenmani">
             <p>imagen manipulada</p>
             <canvas id="canvas"></canvas>
@@ -23,6 +25,7 @@
     </div>
     <br>
     <br>
+    <!-- botones-->
     <div class="botones">
         <button id="gris">Escala de grises</button>
         <button id="color">Umbral de color</button>
@@ -30,6 +33,7 @@
     </div>
     <br>
     <br>
+    <!-- deslizadores-->
     <div class="deslizadores">
             <p>Lado oscuro(Rojo)</p> 
             <input type="range" id="deslizador1" min="0" max="255" value="255"/>

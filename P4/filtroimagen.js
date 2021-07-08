@@ -3,7 +3,7 @@ const canvas = document.getElementById('canvas');
 const img = document.getElementById('imagesrc');
 const ctx = canvas.getContext('2d');
 
-//-- Deslizadores
+//-- Acceso a los deslizadores
 const deslizadorR = document.getElementById('deslizador1');
 const deslizadorV = document.getElementById('deslizador2');
 const deslizadorA = document.getElementById('deslizador3');
@@ -13,15 +13,14 @@ const valordesliR = document.getElementById('range_value1');
 const valordesliV = document.getElementById('range_value2');
 const valordesliA = document.getElementById('range_value3');
 
-// Botones filtros
+// Botones para aplicar los diferentes filtros
 const gris = document.getElementById('gris');
 const color = document.getElementById('color');
 const negativo = document.getElementById('negativo');
 
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que
-//-- lleva un tiempo. Sólo podemos acceder a ella una vez
-//-- que esté totalmente cargada
+//-- lleva un tiempo.
 img.onload = function () {
 
   //-- Se establece como tamaño del canvas el mismo
@@ -80,7 +79,7 @@ deslizadorV.oninput =()=>{
   //-- Obtener el array con todos los píxeles
   let data = imgData.data
 
-  //-- Obtener el umbral de rojo del desliador
+  //-- Obtener el umbral de verde del desliador
   umbralV = deslizadorV.value
 
   //-- Filtrar la imagen según el nuevo umbral
@@ -109,7 +108,7 @@ deslizadorA.oninput =()=>{
   //-- Obtener el array con todos los píxeles
   let data = imgData.data
 
-  //-- Obtener el umbral de rojo del desliador
+  //-- Obtener el umbral de azul del desliador
   umbralA = deslizadorA.value
 
   //-- Filtrar la imagen según el nuevo umbral
@@ -122,7 +121,8 @@ deslizadorA.oninput =()=>{
   ctx.putImageData(imgData, 0, 0);
 }
 
-//-- FILTRO ESCALA DE GRISES
+//-- Al pulsar el botón 'gris' se aplica el filtrado 
+//-- en escala de grises
 gris.onclick =()=>{
 
   //-- Situar la imagen original en el canvas
@@ -147,7 +147,8 @@ gris.onclick =()=>{
   ctx.putImageData(imgData, 0, 0);
 }
 
-//-- FILTRO NEGATIVO
+//-- Al pulsar el botón 'negativo' se aplica
+//-- el filtro para obtener el negativo
 negativo.onclick = () => {
 
   //-- Situar la imagen original en el canvas
@@ -175,3 +176,4 @@ negativo.onclick = () => {
 }
 
  console.log("Fin...");
+ 
