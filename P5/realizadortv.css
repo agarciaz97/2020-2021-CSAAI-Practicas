@@ -1,18 +1,24 @@
+/*Diseño encabezado*/
 h1{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 40px;
     text-align: center;
     color:chocolate;
 }
+/* Diseño del cuerpo*/
 body{
     background-color:wheat;
 }
 
+/* Al ser un vídeo, le pongo un display de tipo bloque
+que me permite centrar el vídeo con un margen automático*/
 #directo{
    display: block;
    margin: auto;
 }
 
+/* Estilo vídeos para que estén
+más o menos simétricos*/
 .videos{
     margin-top: 40px;
 }
@@ -24,6 +30,7 @@ body{
     margin-left: 10px;
 }
 
+/* Estilo de todos los botones*/
 input{
     font-family: sans-serif;
     font-weight: 500;
@@ -37,16 +44,21 @@ input{
     border-radius:15px;
 }
 
+/* Estilo de los botones de las 3 cámaras
+para poder centrarlos en la pantalla*/
 .botonescam{
     display:flex;
     justify-content: center;
     align-items: center;
 }
-
+/* Estilo botones cámaras para que estén
+más o menos simétricos*/
 #btn_video1,#btn_video2{
     margin-right: 100px;
 }
 
+/* Estilo de los botones que no son de las cámaras
+para poder centrarlos en la pantalla*/
 .botonesfuen{
     display:flex;
     justify-content: center;
@@ -54,6 +66,8 @@ input{
     margin-top:20px;
 }
 
+/* Estilo botones no cámaras para que estén
+más o menos simétricos*/
 #btn_src_on,#btn_test{
     margin-right: 10px;
 }
