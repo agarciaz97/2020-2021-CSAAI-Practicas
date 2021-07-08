@@ -1,1 +1,4 @@
  # Práctica 4
+Para el desarrollo de esta práctica he utilizado tres filtros diferentes que permitirán hacer transformaciones en mi imagen obteniendo una imagen diferente a la original. El primero de ellos, es el filtro de grises que permite transformar la imagen a  escala de grises. El segundo es un filtro que permite seleccionar los niveles de color rojo, azul y verde en el esquema de color RGB de mi imagen original.
+Como mejora he implementado un filtro que permite transformar la imagen obteniendo su negativo.
+La práctica se encuentra en el siguiente enlace ==> https://perto97.github.io/2020-2021-CSAAI-Practicas/P4/
