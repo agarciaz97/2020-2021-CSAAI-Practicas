@@ -1,0 +1,60 @@
+h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    color:chocolate;
+}
+body{
+    background-color:wheat;
+}
+
+#directo{
+   display: block;
+   margin: auto;
+}
+
+.videos{
+    margin-top: 40px;
+}
+#video1{
+    margin-left: 490px;
+}
+
+#video3{
+    margin-left: 10px;
+}
+
+input{
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color:cornsilk;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:10px;
+    padding-right:10px;
+    background-color:chocolate;
+    border-radius:15px;
+}
+
+.botonescam{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn_video1,#btn_video2{
+    margin-right: 100px;
+}
+
+.botonesfuen{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:20px;
+}
+
+#btn_src_on,#btn_test{
+    margin-right: 10px;
+}
+
