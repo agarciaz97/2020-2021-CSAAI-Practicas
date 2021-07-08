@@ -41,29 +41,38 @@ y asignarle un margen auto*/
 }
 
 /* Estilo del cuerpo*/
-#fondo{
+body{
     background-image: url('rosquillas.jpg');
 }
 
 /* Estilo del segundo contenedor, donde 
 he metido todos los campos del curriculum */
-div {
+.informacion {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: white;
-    color:black;
-    border: 1px solid;
+    background-color: lightblue;
+    border: 2px solid;
     border-color: black;
     margin: auto;
     padding: 10px;
     width: 50%;
 }
 
-/* Estilo fieldset */
+/* Estilo del fieldset */
 /* Para que sea simétrico tengo 
 que aplicar un margen solo a la parte de abajo de los fieldset */
-/* El estilo quiero que sea igual que el del div */ 
 fieldset {
+    border: 2px solid;
+    border-color: black;
+    color: rgb(48, 48, 212);
     margin-bottom: 10px;
+
+}
+
+/* Estilo de la legenda*/
+legend{
+    font-size: 20px;
+    font-weight: bold;
+    color:rgb(48, 48, 212);
 }
 
 /* Tamaño de las imágenes de los 
@@ -72,10 +81,13 @@ trabajos anteriores(menos importantes)*/
     height: 80px;
     width: 160px;
     margin-right: 10px;
+    margin-left: 7px;
 }
 
 /*Tamaño imagen trabajo actual(más importante)*/
 .img3 {
+    display: block;
+    margin: auto;
     height: 100px;
     width: 200px;
 }
