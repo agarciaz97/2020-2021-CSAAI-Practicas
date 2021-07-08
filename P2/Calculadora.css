@@ -1,13 +1,19 @@
+
+/* selector que me permite seleccionar 
+todo el contenido del documento html*/
 *{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
     color: white;
 }
 
+/* estilo del cuerpo */
 body{
     margin:0%;
     background-color: lightblue;
 }
 
+/* Todo lo que está contenido en este div, 
+se situa en el centro de la pantalla*/
 #Contenido {
     display: flex;
     justify-content: center;
@@ -15,7 +21,8 @@ body{
     height: 100vh; /* altura ventana gráfica*/
 }
 
-
+/* divido el área en filas y columnas
+que serán los botones*/
 #Calculadora{
     display: grid;
     grid-template-columns: repeat(4,50px);
@@ -25,6 +32,8 @@ body{
     border-radius: 15px;
 }
 
+/* diseño de los botones*/
+/* el cursor será una mano que apunta*/
 button{
     cursor: pointer;
     color: black;
@@ -32,10 +41,12 @@ button{
     border-radius: 15px;
 }
 
+/*quito el marco que hay alrededor de los botones*/
 button:focus{
     outline: none;
 }
 
+/* diseño pantalla*/
 #display{
     display: flex;
     grid-column: 1 / -1;
@@ -46,6 +57,8 @@ button:focus{
     background-color: black;
 }
 
+/*quiero que el botón AC ocupe el mismo 
+tamaño que dos botones*/
 #borratodo{
     grid-column: span 2;
 }

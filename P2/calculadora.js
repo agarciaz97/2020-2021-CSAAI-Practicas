@@ -1,8 +1,11 @@
-console.log("Ejecutando JS...");
 
+//-- elemnto pantalla de la calculadora
 display = document.getElementById("display")
-punto = document.getElementById("punto")
+//-- elemento raiz cuadrada
+raiz = document.getElementById("raiz")
+//-- elemento igual
 igual = document.getElementById("igual")
+//-- elemento borrar último y borrarlo todo
 borrartodo = document.getElementById("borratodo")
 borrar = document.getElementById("borrar")
 
@@ -12,7 +15,7 @@ const ESTADO = {
     OP1: 1,
     OPERATION: 2,
     OP2: 3,
-}
+} 
  
  //-- Variable de estado de la calculadora
  //-- Al comenzar estamos en el estado incial
@@ -41,6 +44,7 @@ function digito(ev)
     }
 }
 
+//-- función de retrollamada de los operadores
 function operacion(ev)
 {
     if(estado == ESTADO.OP1){
@@ -54,7 +58,6 @@ function operacion(ev)
 //-- Obtener una colección con todos los elementos
 //-- de la clase digito
 digitos = document.getElementsByClassName("digito")
-operadores = document.getElementsByClassName("operador")
 
 //-- Establecer la misma función de retrollamada
 //-- para todos los botones de tipo dígito
@@ -63,11 +66,19 @@ for (let boton of digitos) {
     boton.onclick = digito;
 }
 
+//-- Obtener todos los elementos de la clase operador
+operadores = document.getElementsByClassName("operador")
+
 for (let operador of operadores) {
 
     operador.onclick = operacion;
 }
-
+ 
+//-- hacer la raíza cuadrada
+raiz.onclick = () =>{
+    display.innerHTML = Math.sqrt(display.innerHTML);
+    estado = ESTADO.OP1;
+}
 
 //-- Evaluar la expresion
 igual.onclick = () => {
@@ -79,6 +90,7 @@ igual.onclick = () => {
     }
 }
 
+//-- borrar lo último escrito
 borrar.onclick = () => {
     if (display.innerHTML != 1){
         display.innerHTML = display.innerHTML.slice(0, -1);
