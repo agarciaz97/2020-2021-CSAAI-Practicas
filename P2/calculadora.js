@@ -75,9 +75,13 @@ for (let operador of operadores) {
 }
  
 //-- hacer la raíza cuadrada
-raiz.onclick = () =>{
+raiz.onclick = () => {
+    if(estado == ESTADO.OP1){
     display.innerHTML = Math.sqrt(display.innerHTML);
     estado = ESTADO.OP1;
+    }else{
+        console.log("error");
+    }
 }
 
 //-- Evaluar la expresion
