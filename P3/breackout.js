@@ -2,8 +2,8 @@
 const canvas = document.getElementById("canvas");
 
 //-- Definir el tamaño del canvas
-canvas.width = 580;
-canvas.height = 420;
+canvas.width = 680;
+canvas.height = 520;
 
 const ctx = canvas.getContext("2d");
 
@@ -23,6 +23,24 @@ var paddleX = (canvas.width-paddleWidth)/2;
 //-- Variables para saber si se han pulsado las teclas
 var rightPressed = false;
 var leftPressed = false;
+
+//-- Características ladrillos
+var brickRowCount = 3;
+var brickColumnCount = 7;
+var brickWidth = 80;
+var brickHeight = 20;
+var brickPadding = 10;
+var brickOffsetTop = 30;
+var brickOffsetLeft = 30;
+
+//-- Cada ladrillo se va a representar con un objeto con las posiciones "x" e "y"
+var bricks = [];
+for(c=0; c<brickColumnCount; c++) {
+    bricks[c] = [];
+    for(r=0; r<brickRowCount; r++) {
+        bricks[c][r] = { x: 0, y: 0 };
+    }
+}
 
 //-- Escuchadores de eventos para saber cuando se pulsan las teclas
 document.addEventListener("keydown", keyDownHandler, false);
@@ -69,6 +87,23 @@ function drawPaddle()
     ctx.closePath();
 }
 
+//-- Función dibujar ladrillos
+function drawBricks() {
+    for(c=0; c<brickColumnCount; c++) {
+        for(r=0; r<brickRowCount; r++) {
+            var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
+            var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
+            bricks[c][r].x = brickX;
+            bricks[c][r].y = brickY;
+            ctx.beginPath();
+            ctx.rect(brickX, brickY, brickWidth, brickHeight);
+            ctx.fillStyle = "#0095DD";
+            ctx.fill();
+            ctx.closePath();
+        }
+    }
+}
+
 //-- Función para animar la bola y la raqueta
 function draw() 
 {
@@ -107,6 +142,7 @@ function draw()
     //-- la raqueta y la bola
     drawBall();
     drawPaddle();
+    drawBricks();
 
 
     //-- Volver a ejecutar drawball cuando toque
