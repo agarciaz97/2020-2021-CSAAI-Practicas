@@ -2,8 +2,8 @@
 const canvas = document.getElementById("canvas");
 
 //-- Definir el tamaño del canvas
-canvas.width = 680;
-canvas.height = 520;
+canvas.width = 480;
+canvas.height = 320;
 
 const ctx = canvas.getContext("2d");
 
@@ -25,26 +25,30 @@ var rightPressed = false;
 var leftPressed = false;
 
 //-- Características ladrillos
-var brickRowCount = 3;
-var brickColumnCount = 7;
+var brickRowCount = 5;
+var brickColumnCount = 3;
 var brickWidth = 80;
 var brickHeight = 20;
 var brickPadding = 10;
 var brickOffsetTop = 30;
 var brickOffsetLeft = 30;
 
+//-- Puntuación
+var score = 0;
+
 //-- Cada ladrillo se va a representar con un objeto con las posiciones "x" e "y"
 var bricks = [];
 for(c=0; c<brickColumnCount; c++) {
     bricks[c] = [];
     for(r=0; r<brickRowCount; r++) {
-        bricks[c][r] = { x: 0, y: 0 };
+        bricks[c][r] = { x: 0, y: 0, status: 1 };
     }
 }
 
 //-- Escuchadores de eventos para saber cuando se pulsan las teclas
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
+
 
 //-- Cuando se pulsen las teclas izquierda o derecha
 //-- se ejecutará esta función
@@ -64,6 +68,26 @@ function keyUpHandler(e) {
     }
     else if(e.keyCode == 37) {
         leftPressed = false;
+    }
+}
+
+//-- Función detectar colisiones
+function collisionDetection() {
+    for(c=0; c<brickColumnCount; c++) {
+        for(r=0; r<brickRowCount; r++) {
+            var b = bricks[c][r];
+            if(b.status == 1) {
+                if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
+                    vely = -vely;
+                    b.status = 0;
+                    score++;
+                    if(score == brickRowCount*brickColumnCount) {
+                        alert("YOU WIN, CONGRATS!");
+                        document.location.reload();
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -87,22 +111,31 @@ function drawPaddle()
     ctx.closePath();
 }
 
-//-- Función dibujar ladrillos
+//-- Función para dibujar ladrillos
 function drawBricks() {
     for(c=0; c<brickColumnCount; c++) {
         for(r=0; r<brickRowCount; r++) {
-            var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
-            var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
-            bricks[c][r].x = brickX;
-            bricks[c][r].y = brickY;
-            ctx.beginPath();
-            ctx.rect(brickX, brickY, brickWidth, brickHeight);
-            ctx.fillStyle = "#0095DD";
-            ctx.fill();
-            ctx.closePath();
+            if(bricks[c][r].status == 1) {
+                var brickX = (r*(brickWidth+brickPadding))+brickOffsetLeft;
+                var brickY = (c*(brickHeight+brickPadding))+brickOffsetTop;
+                bricks[c][r].x = brickX;
+                bricks[c][r].y = brickY;
+                ctx.beginPath();
+                ctx.rect(brickX, brickY, brickWidth, brickHeight);
+                ctx.fillStyle = "#0095DD";
+                ctx.fill();
+                ctx.closePath();
+            }
         }
     }
 }
+
+function drawScore() {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#0095DD";
+    ctx.fillText("Score: "+score, 8, 20);
+}
+
 
 //-- Función para animar la bola y la raqueta
 function draw() 
@@ -143,6 +176,8 @@ function draw()
     drawBall();
     drawPaddle();
     drawBricks();
+    drawScore();
+    collisionDetection();
 
 
     //-- Volver a ejecutar drawball cuando toque
