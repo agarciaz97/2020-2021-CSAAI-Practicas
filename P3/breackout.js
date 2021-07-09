@@ -36,6 +36,9 @@ var brickOffsetLeft = 30;
 //-- Puntuación
 var score = 0;
 
+//-- Vidas
+var lives = 3;
+
 //-- Cada ladrillo se va a representar con un objeto con las posiciones "x" e "y"
 var bricks = [];
 for(c=0; c<brickColumnCount; c++) {
@@ -130,12 +133,19 @@ function drawBricks() {
     }
 }
 
+//-- Función para poner la puntuación en el canvas
 function drawScore() {
     ctx.font = "16px Arial";
     ctx.fillStyle = "#0095DD";
     ctx.fillText("Score: "+score, 8, 20);
 }
 
+//-- Función para poner las vidas en el camvas
+function drawLives() {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#0095DD";
+    ctx.fillText("Lives: "+lives, canvas.width-65, 20);
+}
 
 //-- Función para animar la bola y la raqueta
 function draw() 
@@ -144,15 +154,27 @@ function draw()
     if (x < 10 || x >= (canvas.width - 10) ) {
         velx = -velx;
     }
-
     if (y <= 10){
         vely = -vely;
+    //-- Físicas con la raqueta
     }else if(y > canvas.height - 10){
         if(x > paddleX && x < paddleX + paddleWidth) {
             vely = -vely;
+        //-- en caso de quedarte sin vidas has perdido
         }else{
-            alert("GAME OVER");
-            document.location.reload();
+            lives--;
+            if(!lives) {
+                alert("GAME OVER");
+                document.location.reload()
+            }
+            //-- se resta una vida y se comienza a sacar con la velocidad inicial
+            else {
+                x = canvas.width/2;
+                y = canvas.height-30;
+                velx = 2;
+                vely = -2;
+                paddleX = (canvas.width-paddleWidth)/2;
+            }
         }
     }
 
@@ -172,11 +194,12 @@ function draw()
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     //-- LLamar a las funciones para dibujar 
-    //-- la raqueta y la bola
+    //-- todos los elementos en el canvas
     drawBall();
     drawPaddle();
     drawBricks();
     drawScore();
+    drawLives();
     collisionDetection();
 
 
