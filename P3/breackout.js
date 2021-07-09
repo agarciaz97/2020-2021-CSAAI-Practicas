@@ -73,12 +73,19 @@ function drawPaddle()
 function draw() 
 {
     //-- Rebotes en los límites del canvas
-    if (x < 20 || x >= (canvas.width - 20) ) {
+    if (x < 10 || x >= (canvas.width - 10) ) {
         velx = -velx;
     }
 
-    if (y <= 20 || y > canvas.height - 20) {
+    if (y <= 10){
         vely = -vely;
+    }else if(y > canvas.height - 10){
+        if(x > paddleX && x < paddleX + paddleWidth) {
+            vely = -vely;
+        }else{
+            alert("GAME OVER");
+            document.location.reload();
+        }
     }
 
     //-- La raqueta se mueve en los límites del canvas
