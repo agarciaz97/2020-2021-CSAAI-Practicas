@@ -1,0 +1,24 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: darkred;
+    font-size: 40px;
+    margin-top: 40px;
+}
+#canvas{
+    background-color: black;
+    display: block;
+    margin-top: 40px;
+    margin-left: 530 px;
+}
+
+body{
+    background-image: url('fondojuego.jpg');
+    background-size: cover;
+}
